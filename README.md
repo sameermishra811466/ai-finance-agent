@@ -1,165 +1,187 @@
-# DeepSeek Finance Agent 🐳
+📊 AI Finance Agent — Stock Analysis & Dashboard
 
-A powerful AI-powered finance agent built with the Agno framework that provides real-time financial data, stock analysis, and market insights using natural language queries.
+An AI-powered finance assistant that:
 
-## 🚀 Features
+✅ Analyzes any stock
+✅ Compares two companies
+✅ Fetches real market data
+✅ Generates price charts
+✅ Plots returns & volume
+✅ Saves markdown reports
+✅ Runs in CLI & Streamlit dashboard
 
-- **Real-time Stock Data**: Get current stock prices, historical data, and market trends
-- **Financial Analysis**: Access analyst recommendations and fundamental data
-- **Web Search**: Search for the latest financial news and market information
-- **Interactive UI**: Beautiful web interface for easy interaction
-- **Structured Output**: Financial data displayed in organized tables and bullet points
+Powered by Agno Agents + Nebius LLM + Yahoo Finance.
 
-## 🛠️ Tech Stack
+🚀 Features
 
-- **Framework**: [Agno](https://www.agno.com/) - Modern AI agent framework
-- **LLM Model**: DeepSeek-V3-0324 via Nebius Token Factory
-- **Financial Data**: [YFinance](https://pypi.org/project/yfinance/) - Yahoo Finance API wrapper
-- **Web Search**: [DuckDuckGo](https://duckduckgo.com/) - Privacy-focused search engine
-- **UI**: Agno Playground - Interactive web interface
+🔍 Stock fundamentals analysis
 
-## 📋 Prerequisites
+📈 1-year price history graphs
 
-- Python 3.10 or higher
-- Nebius Token Factory API key
-- Internet connection for real-time data
+📊 Normalized performance comparison
 
-## 🚀 Quick Start
+📉 Daily returns charts
 
-### 1. Clone the Repository
+📦 Volume analysis
 
-```bash
-git clone https://github.com/Arindam200/awesome-ai-apps.git
-cd awesome-ai-apps/simple_ai_agents/finance_agent
-```
+📄 Auto-saved reports in Markdown
 
-### 2. Install Dependencies
+🖥️ Command-line interface
 
-```bash
-# Using pip
+🌐 Web dashboard (Streamlit)
+
+🤖 Tool-calling AI agent
+
+📂 Project Structure
+finance_agent/
+│
+├── main.py        # CLI runner
+├── app.py         # Streamlit dashboard
+├── reports/       # Saved charts + reports
+├── requirements.txt
+├── .env.example
+├── README.md
+└── venv/
+
+⚙️ Setup Instructions
+1️⃣ Clone the repo
+git clone https://github.com/YOUR_USERNAME/finance-agent.git
+cd finance-agent
+
+2️⃣ Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+3️⃣ Install dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
+pip install streamlit matplotlib yfinance python-dotenv
 
-# Or using uv (recommended)
-uv sync
-```
+4️⃣ Setup environment variables
 
-### 3. Set Up Environment Variables
+Create .env file:
 
-Create a `.env` file in the project directory:
+NEBIUS_API_KEY=your_api_key_here
 
-```bash
-NEBIUS_API_KEY=your_nebius_api_key_here
-```
 
-**How to get your Nebius API key:**
+(Do NOT commit .env to GitHub.)
 
-1. Visit [Nebius Token Factory](https://dub.sh/AIStudio)
-2. Sign up or log in to your account
-3. Navigate to the API section
-4. Generate a new API key
-5. Copy the key to your `.env` file
-
-### 4. Run the Application
-
-```bash
+▶️ Run in Terminal (CLI Mode)
 python main.py
-```
 
-The application will start and be available at `http://localhost:8000` (or the port shown in the terminal).
 
-## 💡 Usage Examples
+Example:
 
-Once the application is running, you can interact with the finance agent using natural language queries like:
+Enter ONE or TWO stocks separated by comma: NVDA,AMD
 
-- **"What's the current stock price of Apple?"**
-- **"Show me analyst recommendations for Tesla"**
-- **"Get the latest financial news about cryptocurrency"**
-- **"What are the fundamentals of Microsoft stock?"**
-- **"Compare the performance of Google and Amazon stocks"**
 
-## 🔧 Configuration
+Outputs:
 
-The agent is configured with the following features:
+Analysis table
 
-- **Model**: Meta Llama-3.3-70B-Instruct (70B parameter model)
-- **Tools**:
-  - YFinance Tools (stock prices, analyst recommendations, fundamentals)
-  - DuckDuckGo Tools (web search for latest information)
-- **Display**: Tables for financial data, bullet points for text
-- **UI**: Interactive web playground with real-time responses
+Saved markdown report
 
-## 📊 Available Tools
+Comparison graph
 
-### YFinance Tools
+Returns & volume charts
 
-- **Stock Price**: Real-time and historical stock prices
-- **Analyst Recommendations**: Buy/sell/hold recommendations from financial analysts
-- **Stock Fundamentals**: P/E ratios, market cap, revenue, earnings, and more
+Saved inside:
 
-### DuckDuckGo Tools
+reports/
 
-- **Web Search**: Search for latest financial news and market information
-- **Privacy-focused**: No tracking or personal data collection
+🌐 Run Web Dashboard
+streamlit run app.py
 
-## 🎯 Example Queries
 
-Here are some example queries you can try with the finance agent:
+Open in browser:
 
-```
-"What's the current price of AAPL stock?"
-"Show me analyst recommendations for TSLA"
-"Get the latest news about Bitcoin"
-"What are the fundamentals of MSFT?"
-"Compare GOOGL and AMZN performance over the last month"
-"What's the market cap of NVIDIA?"
-"Show me the P/E ratio of Amazon"
-"Get the latest earnings report for Apple"
-```
+👉 http://localhost:8501
 
-## 🔒 Security & Privacy
+📊 Example Graphs Generated
 
-- **API Keys**: Stored securely in environment variables
-- **No Data Storage**: The agent doesn't store your queries or personal data
-- **Privacy**: Uses DuckDuckGo for web searches (no tracking)
+Normalized performance comparison
 
-## 🐛 Troubleshooting
+Daily returns
 
-### Common Issues
+Trading volume
 
-1. **API Key Error**: Make sure your `NEBIUS_API_KEY` is correctly set in the `.env` file
-2. **Port Already in Use**: The application will automatically find an available port
-3. **Network Issues**: Ensure you have a stable internet connection for real-time data
+All saved automatically.
 
-### Getting Help
+🧠 Tech Stack
 
-If you encounter any issues:
+Python 3.10+
 
-1. Check that all dependencies are installed correctly
-2. Verify your API key is valid and has sufficient credits
-3. Ensure you have Python 3.10+ installed
-4. Check the terminal output for error messages
+Agno Agents
 
-## 🤝 Contributing
+Nebius LLM
 
-We welcome contributions! To contribute to this project:
+Yahoo Finance API
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+Streamlit
 
-## 📄 License
+Pandas
 
-This project is part of the [Awesome AI Apps](https://github.com/Arindam200/awesome-ai-apps) collection and is licensed under the MIT License.
+Matplotlib
 
-## 🙏 Acknowledgments
+🧪 Sample Prompts
 
-- [Nebius Token Factory](https://dub.sh/AIStudio) for providing the LLM infrastructure
-- [Agno](https://www.agno.com/) for the powerful agent framework
-- [YFinance](https://pypi.org/project/yfinance/) for financial data access
-- [DuckDuckGo](https://duckduckgo.com/) for privacy-focused web search
+CLI:
 
----
+AAPL
+TSLA,MSFT
+NVDA vs AMD
 
-**Built with ❤️ using modern AI technologies**
+
+Dashboard:
+
+GOOG,META
+RELIANCE.NS,TCS.NS
+
+🛡️ Security
+
+API keys stored in .env
+
+.env added to .gitignore
+
+Never commit secrets
+
+📌 Future Roadmap
+
+📉 Volatility & Sharpe ratio
+
+🔥 Monte-Carlo simulation
+
+📊 Correlation heatmap
+
+💼 Portfolio optimization
+
+☁️ Cloud deployment
+
+⏰ Daily scheduler
+
+📧 Email reports
+
+⭐ Why This Project Matters
+
+This project demonstrates:
+
+✔ AI agents with tool-calling
+✔ Real-time financial analysis
+✔ Data visualization
+✔ CLI + Web UI
+✔ Clean architecture
+✔ Production-ready patterns
+
+Perfect for:
+
+AI Engineer portfolio
+
+Data science projects
+
+Quant research demos
+
+Full-stack ML apps
+
+🧑‍💻 Author
+
+Built by Sameer 🚀
